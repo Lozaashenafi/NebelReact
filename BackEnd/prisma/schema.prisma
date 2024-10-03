@@ -1,0 +1,104 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+enum GENDER{
+  MALE
+  FEMALE
+}
+
+enum ROLES{
+  ADMIN
+  MANAGER
+}
+enum ACTIVESTATUS{
+  BLOCKED
+  ACTIVE
+  INACTIVE
+}
+model Users{
+      id Int @id @default(autoincrement())
+      email String @unique
+      phone String @unique
+      password String 
+      role ROLES 
+      activeStatus ACTIVESTATUS @default(ACTIVE)
+      profile Profiles?
+}
+model Profiles{
+      id Int @id @default(autoincrement())
+      userId Int @unique
+      firstName String
+      middleName String
+      lastName String
+      gender GENDER
+      imageUrl String?
+      //reference
+      user Users @relation(fields: [userId],references: [id],onDelete: Cascade)
+}
+model AboutUs {
+  id          Int     @id @default(autoincrement()) // Auto-incrementing primary key
+  title       String?
+  description String?
+  isActive    Boolean?
+  imageUrl    String? // Nullable field
+}
+model Banner {
+  id          Int     @id @default(autoincrement()) // Auto-incrementing primary key
+  title       String?  
+  description String?  
+  isActive    Boolean? 
+  imageUrl    String?
+}
+model ContactMessage {
+  id           Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  name         String?  
+  email        String?  
+  phone        String?  
+  subject      String?  
+  message      String?  
+  addedDate    DateTime? 
+  isTestimonial Boolean?  
+}
+model Dentist {
+  id          Int     @id @default(autoincrement()) // Auto-incrementing primary key
+  name        String? 
+  profession  String? 
+  phoneNumber String? 
+  imageUrl    String?
+  linkedinLink String? 
+  igLink      String? 
+  fbLink      String?
+  isActive    Boolean 
+}
+model News {
+  id          Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  description String?   
+  title       String?  
+  imageUrl1   String?  
+  imageUrl2   String? 
+  isActive    Boolean?  
+  addedDate   DateTime @default(now()) 
+}
+model Information {
+  id               Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  openHour         String?  
+  establishmentDate DateTime? 
+  location         String?  
+  phoneNumber      String?  
+  isActive         Boolean   
+}
+model Service {
+  id          Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  title       String?  
+  description String?  
+  imageUrl    String?  
+  price       Float?   
+  isActive    Boolean? 
+}
