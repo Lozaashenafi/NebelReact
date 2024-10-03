@@ -1,6 +1,6 @@
 import React from "react";
-import Image1 from "../assets/images/blog/blog-1.jpg";
-import Image2 from "../assets/images/blog/blog-2.jpg";
+import Image1 from "../assets/images/blog/blog1.png";
+import Image2 from "../assets/images/blog/blog2.png";
 
 function BlogDetail() {
   return (
@@ -23,15 +23,18 @@ function BlogDetail() {
               <div className="row align-items-center">
                 <div className="col-lg-6 col-md-12">
                   <div className="dental-tourism-tourists-content">
-                    <h3>New Technology Make for Dental Operation</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in sed quia non
-                      numquam eius modi tempora incidunt ut labore et dolore
-                      magnam aliquam quaerat voluptatem.
+                    <h3>
+                      We’re Excited to Announce the Launch of Our offical
+                      Website!
+                    </h3>
+                    <p style={{ fontSize: "16px" }}>
+                      We are delighted to share the news that Nebel Dental has
+                      officially launched its brand-new website! After months of
+                      hard work and dedication, we are proud to unveil a website
+                      designed with you in mind. Our new site offers a
+                      streamlined user experience with a modern, fresh look,
+                      making it easier than ever to explore our services and
+                      learn about the cutting-edge dental care we provide.
                     </p>
                   </div>
                 </div>
@@ -50,8 +53,8 @@ function BlogDetail() {
                       </div>
                     </div>
                     <p className="mt-2">
-                      <span>Posted On:</span>
-                      @Model.AddedDate
+                      <span>Posted On: </span>
+                      24/01/2017
                     </p>
                   </div>
                 </div>

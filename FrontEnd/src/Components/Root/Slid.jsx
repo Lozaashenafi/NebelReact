@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -39,10 +41,9 @@ function Slid() {
     nextArrow: <NextArrow />, // Custom next arrow
     prevArrow: <PrevArrow />, // Custom previous arrow
   };
-
   return (
     <Slider {...settings}>
-      <div className="main-slides-item">
+      <div className="main-slides-item pt-5">
         <div className="container">
           <div className="main-slides-content">
             <span className="sub-title">
@@ -51,80 +52,72 @@ function Slid() {
             <h1>
               Personalized Dental <span>Care</span>
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p style={{ fontSize: "18px" }}>
+              Our personalized dental care ensures your smile stays bright and
+              healthy with tailored cleaning routines and expert guidance
             </p>
             <div className="slides-btn">
-              <a href="appointment.html" className="default-btn">
+              <Link to="/appointment" className="default-btn">
                 Book Appointment
-              </a>
+              </Link>
               <div className="checkup-content">
                 <div className="icon">
                   <i className="flaticon-chair"></i>
                 </div>
-                <span>
-                  <a href="contact-us.html">Get Free Checkup</a>
-                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="main-slides-item item-bg2">
+      <div className="main-slides-item item-bg2 pt-5">
         <div className="container">
           <div className="main-slides-content">
             <span className="sub-title">
               <i className="flaticon-hashtag-symbol"></i> Keeping Teeth Clean
             </span>
             <h1>
-              Exceptional Care for <span>Women</span>
+              Exceptional care for <span>Women</span>
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p style={{ fontSize: "18px" }}>
+              Experience exceptional care tailored specifically for women,
+              focusing on personalized treatments and comprehensive dental
+              health solutions.
             </p>
             <div className="slides-btn">
-              <a href="appointment.html" className="default-btn">
+              <Link to="/appointment" className="default-btn">
                 Book Appointment
-              </a>
+              </Link>
               <div className="checkup-content">
                 <div className="icon">
                   <i className="flaticon-chair"></i>
                 </div>
-                <span>
-                  <a href="contact-us.html">Get Free Checkup</a>
-                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="main-slides-item item-bg3">
+      <div className="main-slides-item item-bg3 pt-5">
         <div className="container">
           <div className="main-slides-content">
             <span className="sub-title">
               <i className="flaticon-hashtag-symbol"></i> Keeping Teeth Clean
             </span>
             <h1>
-              Your Health is Our Top <span>Priority</span>
+              Your Health is our top <span>Priority</span>
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p style={{ fontSize: "18px" }}>
+              At our practice, your health is our top priority, with dedicated
+              care and personalized treatments to ensure your overall
+              well-being.
             </p>
             <div className="slides-btn">
-              <a href="appointment.html" className="default-btn">
+              <Link to="/appointment" className="default-btn">
                 Book Appointment
-              </a>
+              </Link>
               <div className="checkup-content">
                 <div className="icon">
                   <i className="flaticon-chair"></i>
                 </div>
-                <span>
-                  <a href="contact-us.html">Get Free Checkup</a>
-                </span>
               </div>
             </div>
           </div>

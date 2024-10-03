@@ -25,6 +25,7 @@ import Info from "./Page/Admin/Info";
 import { useAuth } from "./Context/authContext";
 import Login from "./Page/Login";
 import ToastNotification from "./Components/Toast";
+import Appointment from "./Page/Appointment";
 
 function App() {
   const { isLoggedIn, isAdmin, isManager, userData } = useAuth();
@@ -42,6 +43,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/dentist" element={<Dentist />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/appointment" element={<Appointment />} />
         </Route>
         {/* Admin layout */}
         <Route path="/admin" element={<AdminLayout />}>

@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/nebellogo.jpg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
               <h2>
                 <a style={{ color: "#0094ff" }}>
                   <img src={logo} alt="Nebellogo" style={{ width: "90px" }} />
-                  NE<span style={{ color: "#0c2c7d" }}>BE</span>L
+                  NE<span style={{ color: "#fff" }}>BE</span>L
                 </a>
               </h2>
               <p>
@@ -26,13 +27,13 @@ function Footer() {
               <h3>Useful Link</h3>
               <ul className="quick-links">
                 <li>
-                  <a href="/about-us">About Us</a>
+                  <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <a href="/services">Dental Services</a>
+                  <Link to="/services">Dental Services</Link>
                 </li>
                 <li>
-                  <a href="/dentists">Dentist</a>
+                  <Link to="/dentist">Dentist</Link>
                 </li>
               </ul>
             </div>
@@ -45,7 +46,7 @@ function Footer() {
                   <i className="flaticon-emergency-call"></i>
                   Call Today
                   <span>
-                    <a href="tel:088123654987">088123654987</a>
+                    <a href="tel:088123654987">+251 91 139 2567</a>
                   </span>
                 </li>
                 <li>
@@ -56,7 +57,7 @@ function Footer() {
                 <li>
                   <i className="flaticon-red-cross"></i>
                   Our Location
-                  <span>123 Dental Street, Cityname</span>
+                  <span>hawassa piassa</span>
                 </li>
               </ul>
             </div>

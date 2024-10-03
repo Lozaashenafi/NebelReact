@@ -1,28 +1,25 @@
 import React from "react";
-import Image from "../../assets/images/services/services-1.jpg";
+import { Link } from "react-router-dom";
 
-function SingleService() {
+function SingleService({ image, title, description }) {
   return (
     <div className="col-lg-4 col-md-6">
       <div className="single-services">
-        <div className="services-image">
-          <a href="services-details.html">
-            <img src={Image} alt="image" />
-          </a>
+        <div className="services-image" style={{ height: "300px" }}>
+          <Link>
+            <img src={image} alt={title} className="" />
+          </Link>
           <div className="icon">
-            <a href="services-details.html">
-              <i className="flaticon-chair"></i>
+            <a>
+              <i class="flaticon-tooth-2"></i>
             </a>
           </div>
         </div>
-        <div className="services-content">
-          <h3>
-            <a href="services-details.html">General Dentistry</a>
+        <div className="services-content" style={{ height: "300px" }}>
+          <h3 className="font-bold">
+            <a>{title}</a>
           </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <p className="font-serif">{description}</p>
         </div>
       </div>
     </div>

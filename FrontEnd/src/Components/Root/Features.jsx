@@ -6,13 +6,16 @@ function Features() {
       <div className="container">
         <div className="row" style={{ marginTop: "8%" }}>
           <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-            <div className="single-features bg-4a6577">
+            <div
+              className="single-features bg-4a6577"
+              style={{ height: "200px" }}
+            >
               <div className="content">
                 <div className="icon">
                   <i className="flaticon-dental-care"></i>
                 </div>
                 <h3>
-                  <a href="services-details.html">Fair Payment</a>
+                  <a>Fair Payment</a>
                 </h3>
                 <p>
                   We believe in fair pricing, ensuring that you receive the best
@@ -28,7 +31,7 @@ function Features() {
                   <i className="flaticon-tooth-1"></i>
                 </div>
                 <h3>
-                  <a href="services-details.html">New Technology</a>
+                  <a>New Technology</a>
                 </h3>
                 <p>Innovative care powered by the latest technology.</p>
               </div>
@@ -41,7 +44,7 @@ function Features() {
                   <i className="flaticon-dental-care"></i>
                 </div>
                 <h3>
-                  <a href="services-details.html">Certified Dentist</a>
+                  <a>Certified Dentist</a>
                 </h3>
                 <p>Certified dentists delivering expert care with precision.</p>
               </div>

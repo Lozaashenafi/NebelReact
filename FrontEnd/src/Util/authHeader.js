@@ -1,8 +1,13 @@
 // Function to read the data from the user's local storage
 const getAuth = async () => {
-  const userInfo = await JSON.parse(localStorage.getItem("token"));
-  console.log(userInfo);
-  // console.log(userInfo);
+  try {
+    const userInfo = await JSON.parse(localStorage.getItem("token"));
+    console.log(userInfo);
+  } catch (error) {
+    console.error("Failed to parse token:", error);
+    // Handle error (e.g., redirect user, show message)
+  }
+
   let userData = {
     id: "",
     firstName: "",

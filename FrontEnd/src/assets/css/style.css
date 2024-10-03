@@ -1613,7 +1613,7 @@ Search Modal Style CSS
 Main Slides Area CSS
 =================================================*/
 .main-slides-item {
-  background-image: url(../images/main-slides/slides-bg1.jpg);
+  background-image: url(../images/banner/614304fd-3a69-47cb-b38c-21fab013d066_banner3-01.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1623,10 +1623,10 @@ Main Slides Area CSS
   padding-bottom: 250px;
 }
 .main-slides-item.item-bg2 {
-  background-image: url(../images/main-slides/slides-bg2.jpg);
+  background-image: url(../images/banner/be74431a-6e16-4956-a9a7-55a7afdc9d8d_ethiowomen.png);
 }
 .main-slides-item.item-bg3 {
-  background-image: url(../images/main-slides/slides-bg3.jpg);
+  background-image: url(../images/banner/e16c3f96-4bbd-42c7-8b82-6f3f6d650bb5_banner3-01.png);
 }
 .main-slides-item.item-bg4 {
   background-image: url(../images/main-slides/slides-bg4.jpg);
@@ -2982,7 +2982,7 @@ Gallery Area CSS
 Appointment Area CSS
 =================================================*/
 .appointment-area.bg-image {
-  background-image: url(../images/appointment/appointment-bg-2.jpg);
+  background-image: url(../images/about/appointment.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3132,11 +3132,13 @@ Page Banner CSS
 .page-banner-area {
   padding-top: 125px;
   padding-bottom: 130px;
-  background-color: #124390;
+  background-image: url("../../assets/images/banner/nebelbanner.png");
+  background-size: contain;
 }
 
 .page-banner-content {
-  text-align: center;
+  margin-left: 279px;
+  text-align: left;
 }
 .page-banner-content h2 {
   color: #ffffff;
@@ -3145,7 +3147,8 @@ Page Banner CSS
   font-weight: 600;
 }
 .page-banner-content .pages-list {
-  text-align: center;
+  margin-left: 10px;
+  text-align: left;
   padding-left: 0;
   margin-bottom: 0;
 }

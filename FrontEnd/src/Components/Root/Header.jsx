@@ -26,14 +26,14 @@ function Header() {
                   <i className="flaticon-emergency-call"></i>
                   Call Us Anytime
                   <span>
-                    <Link to="tel:088123654987">088123654987</Link>{" "}
+                    <Link to="tel:088123654987">+251 91 139 2567</Link>{" "}
                     {/* Use Link for tel */}
                   </span>
                 </li>
                 <li>
                   <i className="flaticon-wall-clock"></i>
                   Open Hour
-                  <span></span>
+                  <span>09:00 AM to 07:00 PM</span>
                 </li>
               </ul>
             </div>

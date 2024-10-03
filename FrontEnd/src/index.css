@@ -4,13 +4,13 @@
 
 /* Change the color of the dots */
 .slick-dots li button:before {
-  color: #091e3e;
+  color: #fff;
   opacity: 0.75; /* Optional: Add some opacity */
 }
 
 /* Make the active dot more visible */
 .slick-dots li.slick-active button:before {
-  color: #091e3e; /* White color for active dot */
+  color: #fff; /* White color for active dot */
   opacity: 1; /* Fully visible */
 }
 .h1,
@@ -28,4 +28,7 @@ h6 {
   color: #081949;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+}
+.slick-track {
+  height: 600px;
 }

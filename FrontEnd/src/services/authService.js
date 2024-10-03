@@ -4,16 +4,15 @@ import axios from "../Util/axios";
 const authService = {
   login: async (formData) => {
     try {
-      console.log("Auth service form data:", JSON.stringify(formData));
+      console.log("service: " + JSON.stringify(formData));
       const response = await axios.post("user/login", formData);
-      console.log("Response:", response.data); // Log the response data
-      // Check if response data is structured as expected
-      if (response.data && response.data.success) {
-        const token = response.data.token; // Extract token from the response
-        localStorage.setItem("token", token); // Store the token
-        return { success: true, message: response.data.message }; // Return success message
+      console.log("service:res " + response); // Check the response structure in the console
+
+      if (response && response.data && response.data.success) {
+        localStorage.setItem("token", response.data.token);
+        return { success: true, message: "Login successful" };
       } else {
-        return { success: false, message: "Login failed" }; // Fallback message
+        return { success: false, message: "Login failed" };
       }
     } catch (error) {
       console.error("Error during login:", error);

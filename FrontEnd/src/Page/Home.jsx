@@ -7,8 +7,9 @@ import AppointmentOverView from "../Components/Root/AppointmentOverView";
 import About from "../Components/Root/About";
 import CoreFeaturse from "../Components/Root/CoreFeaturse";
 import Doctor from "../Components/Root/Doctor";
-import Testimonials from "../Components/Root/Testimonials";
+// import Testimonials from "../Components/Root/Testimonials";
 import Location from "../Components/Root/Location";
+// import ReviewSection from "../Components/Root/ReviewSection";
 
 function Home() {
   return (
@@ -21,7 +22,8 @@ function Home() {
       <About />
       <CoreFeaturse />
       <Doctor />
-      <Testimonials />
+      {/* <Testimonials /> */}
+      {/* <ReviewSection /> */}
       <Location />
     </div>
   );

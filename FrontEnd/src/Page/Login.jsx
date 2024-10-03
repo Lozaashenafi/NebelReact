@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Layout, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import authService from "../services/authService";
 import { useAuth } from "../Context/authContext";
@@ -6,14 +7,21 @@ import { useToast } from "../Context/ToastContext";
 
 function Login() {
   const { toastData, hideToast, setToastData } = useToast();
-  const { isAdmin, isManager, setIsLoggedIn, fetchData } = useAuth();
-
+  const {
+    isAdmin,
+    isManager,
+    userData,
+    setUserData,
+    isLoggedIn,
+    setIsLoggedIn,
+    fetchData,
+  } = useAuth();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
+
+  const navigater = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,29 +29,32 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      console.log("login", JSON.stringify(formData)); // Print formData as string
-      const res = await authService.login(formData);
-      console.log("Response:", res); // Check response structure
-
-      setToastData(res);
-      if (res.success) {
-        fetchData();
-        setIsLoggedIn(true);
-        // Navigate based on user role (assumed to be part of res)
-        if (res.role === "admin") {
-          navigate("/admin/home");
-        } else if (res.role === "manager") {
-          navigate("/manager/home");
-        }
+    console.log("login: " + JSON.stringify(formData));
+    const res = await authService.login(formData);
+    console.log(res);
+    setToastData(res);
+    if (res.success) {
+      fetchData();
+      setIsLoggedIn(true);
+      if (isAdmin) {
+        navigater("/admin");
+      } else if (isManager) {
+        navigater("/manager/home");
       } else {
-        setErrorMessage(res.message || "Login failed. Please try again.");
+        navigater("/login");
       }
-    } catch (error) {
-      console.error("Login error:", error);
-      setErrorMessage("An error occurred while logging in. Please try again.");
     }
   };
+  useEffect(() => {
+    console.log(isLoggedIn);
+    if (isAdmin) {
+      navigater("/admin/home");
+    } else if (isManager) {
+      navigater("/manager/home");
+    } else {
+      navigater("/login");
+    }
+  }, [isLoggedIn]);
 
   return (
     <div className="row mt-4">
@@ -51,9 +62,7 @@ function Login() {
       <div className="col-md-4">
         <div className="login-form">
           <h2>Login</h2>
-          {errorMessage && (
-            <div className="alert alert-danger">{errorMessage}</div>
-          )}
+
           <form onSubmit={handleLogin}>
             <div className="form-group">
               <label>Email</label>

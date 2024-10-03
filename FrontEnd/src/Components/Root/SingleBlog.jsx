@@ -1,32 +1,23 @@
 import React from "react";
-import Image from "../../assets/images/blog/blog-1.jpg";
+import { Link } from "react-router-dom";
 
-function SingleBlog() {
+function SingleBlog({ title, description, image }) {
   return (
     <div className="col-lg-4 col-md-6">
       <div className="single-blog">
         <div className="blog-image">
-          <a href="blog-details.html">
-            <img src={Image} alt="image" />
-          </a>
-          <div className="tag">10 Mar</div>
-          <div className="tag-two">
-            <a href="blog.html">Technology</a>
-          </div>
+          <Link to="/blog/detail">
+            <img src={image} alt="Blog Image" />
+          </Link>
         </div>
         <div className="blog-content">
           <h3>
-            <a href="blog-details.html">
-              New Technology Make for Dental Operation
-            </a>
+            <Link to="/blog/detail">{title}</Link>
           </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-            eiusmod.
-          </p>
-          <a href="blog-details.html" className="blog-btn">
+          <p>{description}</p>
+          <Link to="/blog/detail" className="blog-btn">
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>
