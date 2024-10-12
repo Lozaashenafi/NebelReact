@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SingleService from "./SingleService";
 import Image1 from "../../assets/images/services/services-1.jpg";
@@ -7,8 +7,24 @@ import Image3 from "../../assets/images/services/services-3.jpg";
 import Image4 from "../../assets/images/services/services-4.jpg";
 import Image5 from "../../assets/images/services/services-5.jpg";
 import Image6 from "../../assets/images/services/services-6.jpg";
+import api from "../../Util/api";
 
 function Services() {
+  const [services, setServices] = useState([]);
+
+  const fetchInfo = async () => {
+    try {
+      const response = await api.get("/service");
+      setServices(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchInfo();
+  }, []);
+  console.log(services);
   return (
     <section className="services-area pb-70">
       <div className="container">
@@ -61,7 +77,7 @@ function Services() {
           />
           <SingleService
             image={Image6}
-            title="Root Canal Treatment"
+            title="Ro         ot Canal Treatment"
             description="Save your natural tooth with our root canal treatment. This procedure removes infected tissue from inside the tooth, cleans and disinfects the area, and then seals it to prevent further infection. Our treatment helps relieve pain and restore tooth"
           />
         </div>

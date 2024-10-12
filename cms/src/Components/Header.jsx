@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/images/nebellogo.jpg";
+import Logo from "../assets/nebellogo.jpg";
 
 function Header() {
   return (

@@ -56,8 +56,11 @@ function Footer() {
                 </li>
                 <li>
                   <i className="flaticon-red-cross"></i>
-                  Our Location
-                  <span>hawassa piassa</span>
+                  Location 1<span>Hawassa ,piassa , </span>
+                </li>
+                <li>
+                  <i className="flaticon-red-cross"></i>
+                  Location 2<span>Arbaminch </span>
                 </li>
               </ul>
             </div>

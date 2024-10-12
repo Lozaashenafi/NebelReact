@@ -9,7 +9,7 @@ function SingleDoctor({ image, name, profession, socialLinks }) {
         </a>
         <div className="doctor-content">
           <h3>
-            <a href="dentist-details.html">{name}</a>
+            <a>{name}</a>
           </h3>
           <span>{profession}</span>
           <div className="share-link">

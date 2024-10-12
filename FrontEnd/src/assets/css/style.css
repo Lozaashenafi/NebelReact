@@ -1613,7 +1613,6 @@ Search Modal Style CSS
 Main Slides Area CSS
 =================================================*/
 .main-slides-item {
-  background-image: url(../images/banner/614304fd-3a69-47cb-b38c-21fab013d066_banner3-01.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3133,11 +3132,12 @@ Page Banner CSS
   padding-top: 125px;
   padding-bottom: 130px;
   background-image: url("../../assets/images/banner/nebelbanner.png");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .page-banner-content {
-  margin-left: 279px;
   text-align: left;
 }
 .page-banner-content h2 {

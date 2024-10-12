@@ -1,6 +1,6 @@
 import axios from "axios";
 import getAuth from "./authHeader";
-const serverURL = import.meta.env.VITE_REACT_APP_SERVER_URL;
+const serverURL = "http://api.nebeldentalclinic.com/api/";
 const instance = axios.create({
   baseURL: serverURL,
   withCredentials: true,
@@ -13,7 +13,7 @@ instance.interceptors.request.use(async (config) => {
   const token = data.token;
   if (token) {
     config.headers = {
-      authorization: token,
+      "x-access-token": token,
     };
   }
   return config;

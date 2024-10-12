@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { message } from "antd"; // Ant Design's message for notifications
-import userService from "../../services/userService"; // Import the user service
+import userService from "../services/userService"; // Import the user service
+import { useToast } from "../Context/ToastContext";
 
 function Register() {
+  const { toastData, hideToast, setToastData } = useToast();
   const [formData, setFormData] = useState({
     firstName: "",
     middleName: "",
@@ -37,9 +39,21 @@ function Register() {
     }
 
     try {
-      const response = await userService.register(formData); // Call the service
+      const response = await userService.register(formData);
+      setToastData(response); // Call the service
       if (response.success) {
         message.success("User registered successfully!");
+        setFormData({
+          firstName: "",
+          middleName: "",
+          lastName: "",
+          gender: "",
+          email: "",
+          phone: "",
+          password: "",
+          confirmPassword: "",
+          role: "",
+        });
       } else {
         message.error(response.message || "Registration failed!");
       }
@@ -106,12 +120,12 @@ function Register() {
                   </div>
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label htmlFor="phoneNumber">Phone Number</label>
+                      <label htmlFor="phone">Phone Number</label>
                       <input
-                        id="phoneNumber"
-                        name="phoneNumber"
+                        id="phone"
+                        name="phone"
                         className="form-control"
-                        value={formData.phoneNumber}
+                        value={formData.phone}
                         onChange={handleChange}
                       />
                       <span className="text-danger"></span>

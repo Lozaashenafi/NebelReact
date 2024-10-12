@@ -5,10 +5,10 @@ function Features() {
     <section className="features-area pb-70">
       <div className="container">
         <div className="row" style={{ marginTop: "8%" }}>
-          <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+          <div className="col-lg-4 col-md-6">
             <div
               className="single-features bg-4a6577"
-              style={{ height: "200px" }}
+              style={{ height: "230px" }}
             >
               <div className="content">
                 <div className="icon">
@@ -25,7 +25,10 @@ function Features() {
             </div>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div className="single-features bg-f57e57">
+            <div
+              className="single-features bg-f57e57"
+              style={{ height: "230px" }}
+            >
               <div className="content">
                 <div className="icon">
                   <i className="flaticon-tooth-1"></i>
@@ -38,7 +41,7 @@ function Features() {
             </div>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div className="single-features">
+            <div className="single-features" style={{ height: "230px" }}>
               <div className="content">
                 <div className="icon">
                   <i className="flaticon-dental-care"></i>

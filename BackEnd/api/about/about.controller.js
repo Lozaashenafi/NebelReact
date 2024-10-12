@@ -8,10 +8,10 @@ const prisma = new PrismaClient();
 // Set up multer storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "uploads/aboutus")); // Specify the folder to save the images
+    cb(null, "uploads/aboutus");
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Create a unique filename
+    cb(null, file.fieldname + Date.now() + path.extname(file.originalname));
   },
 });
 
@@ -25,14 +25,21 @@ const aboutController = {
       // Validate the incoming data
       aboutSchema.create.parse(req.body);
       const { title, description, isActive } = req.body;
-      console.log(" back" + req.body);
       const imageFile = req.file;
       let imageUrl = null;
-      // If an image is uploaded, process it
+
+      // Process the image if it is uploaded
       if (imageFile) {
         imageUrl = `uploads/aboutus/${imageFile.filename}`; // Save relative path for the database
       }
 
+      // Mark all existing AboutUs records as inactive
+      await prisma.aboutUs.updateMany({
+        where: { isActive: true },
+        data: { isActive: false },
+      });
+
+      // Create the new AboutUs record
       const newAbout = await prisma.aboutUs.create({
         data: {
           title,
@@ -44,7 +51,8 @@ const aboutController = {
 
       res.status(201).json({
         success: true,
-        message: "AboutUs created successfully",
+        message:
+          "AboutUs created successfully and the previous ones are set to inactive.",
         data: newAbout,
       });
     } catch (error) {
@@ -62,13 +70,18 @@ const aboutController = {
       });
     }
   },
-
   get: async (req, res) => {
     try {
-      const aboutUsList = await prisma.aboutUs.findMany();
+      // Retrieve the first active About Us entry
+      const activeAboutUs = await prisma.aboutUs.findFirst({
+        where: {
+          isActive: true,
+        },
+      });
+
       res.status(200).json({
         success: true,
-        data: aboutUsList,
+        data: activeAboutUs,
       });
     } catch (error) {
       console.error("Error retrieving AboutUs:", error);

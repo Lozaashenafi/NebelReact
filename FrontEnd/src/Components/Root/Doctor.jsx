@@ -7,7 +7,7 @@ import Image3 from "../../assets/images/doctor/doctor-3.jpg";
 
 function Doctor() {
   return (
-    <section className="doctor-area pb-70">
+    <section className="doctor-area pb-70 mt-3">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-5">
@@ -28,39 +28,9 @@ function Doctor() {
           </div>
         </div>
         <div className="row">
-          <SingleDoctor
-            image={Image1}
-            name="Dr. Johnson Melbourne"
-            profession="Prosthodontics Dentist"
-            socialLinks={{
-              facebook: "https://www.facebook.com/",
-              twitter: "https://twitter.com/?lang=en",
-              linkedin: "https://www.linkedin.com/",
-              instagram: "https://www.instagram.com/",
-            }}
-          />
-          <SingleDoctor
-            image={Image2}
-            name="Dr. Ena Dicrosa"
-            profession="Aesthetic Dentistry"
-            socialLinks={{
-              facebook: "https://www.facebook.com/",
-              twitter: "https://twitter.com/?lang=en",
-              linkedin: "https://www.linkedin.com/",
-              instagram: "https://www.instagram.com/",
-            }}
-          />
-          <SingleDoctor
-            image={Image3}
-            name="Dr. Addison Smith"
-            profession="Gastroenterologists"
-            socialLinks={{
-              facebook: "https://www.facebook.com/",
-              twitter: "https://twitter.com/?lang=en",
-              linkedin: "https://www.linkedin.com/",
-              instagram: "https://www.instagram.com/",
-            }}
-          />
+          <SingleDoctor image={Image1} socialLinks={{}} />
+          <SingleDoctor image={Image2} socialLinks={{}} />
+          <SingleDoctor image={Image3} socialLinks={{}} />
         </div>
       </div>
     </section>

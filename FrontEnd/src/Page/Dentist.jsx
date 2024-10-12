@@ -22,72 +22,12 @@ function Dentist() {
             <h2>Our Specialized and Experienced Dentist</h2>
           </div>
           <div class="row">
-            <SingleDoctor
-              image={Image1}
-              name="Dr. Johnson Melbourne"
-              profession="Prosthodontics Dentist"
-              socialLinks={{
-                facebook: "https://www.facebook.com/",
-                twitter: "https://twitter.com/?lang=en",
-                linkedin: "https://www.linkedin.com/",
-                instagram: "https://www.instagram.com/",
-              }}
-            />
-            <SingleDoctor
-              image={Image2}
-              name="Dr. Ena Dicrosa"
-              profession="Aesthetic Dentistry"
-              socialLinks={{
-                facebook: "https://www.facebook.com/",
-                twitter: "https://twitter.com/?lang=en",
-                linkedin: "https://www.linkedin.com/",
-                instagram: "https://www.instagram.com/",
-              }}
-            />
-            <SingleDoctor
-              image={Image3}
-              name="Dr. Addison Smith"
-              profession="Gastroenterologists"
-              socialLinks={{
-                facebook: "https://www.facebook.com/",
-                twitter: "https://twitter.com/?lang=en",
-                linkedin: "https://www.linkedin.com/",
-                instagram: "https://www.instagram.com/",
-              }}
-            />
-            <SingleDoctor
-              image={Image4}
-              name="Dr. Ronnie Aaron"
-              profession="Dermatologists"
-              socialLinks={{
-                facebook: "https://www.facebook.com/",
-                twitter: "https://twitter.com/?lang=en",
-                linkedin: "https://www.linkedin.com/",
-                instagram: "https://www.instagram.com/",
-              }}
-            />
-            <SingleDoctor
-              image={Image5}
-              name="Dr. Edie Dee"
-              profession="Cardiologists"
-              socialLinks={{
-                facebook: "https://www.facebook.com/",
-                twitter: "https://twitter.com/?lang=en",
-                linkedin: "https://www.linkedin.com/",
-                instagram: "https://www.instagram.com/",
-              }}
-            />
-            <SingleDoctor
-              image={Image6}
-              name="Dr. Daisy Gabriela"
-              profession="Endocrinologists"
-              socialLinks={{
-                facebook: "https://www.facebook.com/",
-                twitter: "https://twitter.com/?lang=en",
-                linkedin: "https://www.linkedin.com/",
-                instagram: "https://www.instagram.com/",
-              }}
-            />
+            <SingleDoctor image={Image1} socialLinks={{}} />
+            <SingleDoctor image={Image2} socialLinks={{}} />
+            <SingleDoctor image={Image3} socialLinks={{}} />
+            <SingleDoctor image={Image4} socialLinks={{}} />
+            <SingleDoctor image={Image5} socialLinks={{}} />
+            <SingleDoctor image={Image6} socialLinks={{}} />
           </div>
         </div>
       </section>

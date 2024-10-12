@@ -39,7 +39,7 @@ function CoreFeaturse() {
                 <i className="flaticon-policy"></i>
               </div>
               <h3>
-                <a href="services-details.html">Certified Dentists</a>
+                <a>Certified Dentists</a>
               </h3>
               <p style={{ fontSize: "16px" }}>
                 Experienced and certified dentists providing top-notch care and
@@ -53,7 +53,7 @@ function CoreFeaturse() {
                 <i className="flaticon-diamond"></i>
               </div>
               <h3>
-                <a href="services-details.html">Experience</a>
+                <a>Experience</a>
               </h3>
               <p style={{ fontSize: "16px" }}>
                 Benefit from our extensive experience and expertise in
@@ -67,7 +67,7 @@ function CoreFeaturse() {
                 <i className="flaticon-hospitalisation"></i>
               </div>
               <h3>
-                <a href="services-details.html">Patient Care</a>
+                <a>Patient Care</a>
               </h3>
               <p style={{ fontSize: "16px" }}>
                 Dedicated to personalized patient care with a focus on your

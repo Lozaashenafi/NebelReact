@@ -7,12 +7,6 @@ function Banner({ title }) {
       <div className="container ">
         <div className="page-banner-content ">
           <h2>{title}</h2>
-          <ul className="pages-list">
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>{title}</li>
-          </ul>
         </div>
       </div>
     </div>

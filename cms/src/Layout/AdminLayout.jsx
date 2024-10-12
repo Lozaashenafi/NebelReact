@@ -4,9 +4,9 @@ import "../assets/Admin/css/bootstrap.min.css";
 import "../assets/Admin/css/plugins.min.css";
 import "../assets/Admin/css/kaiadmin.min.css";
 import "../assets/Admin/css/demo.css";
-import SideBar from "../Components/Admin/SideBar";
-import Header from "../Components/Admin/Header";
-import Footer from "../Components/Admin/Footer";
+import SideBar from "../Components/SideBar";
+import Header from "../Components/Header";
+// import Footer from "../Components/Footer";
 import "primereact/resources/themes/saga-blue/theme.css"; // Choose your preferred theme
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
@@ -22,7 +22,7 @@ function AdminLayout() {
             <Outlet />
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

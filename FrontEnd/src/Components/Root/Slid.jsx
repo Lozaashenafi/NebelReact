@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// Import your images at the top
+import bannerImage1 from "../../assets/images/banner/614304fd-3a69-47cb-b38c-21fab013d066_banner3-01.png";
+import bannerImage2 from "../../assets/images/banner/be74431a-6e16-4956-a9a7-55a7afdc9d8d_ethiowomen.png";
+import bannerImage3 from "../../assets/images/banner/e16c3f96-4bbd-42c7-8b82-6f3f6d650bb5_banner3-01.png";
 
 // Custom Next Arrow
 function NextArrow(props) {
@@ -30,6 +34,21 @@ function PrevArrow(props) {
 }
 
 function Slid() {
+  const [banner, setBanner] = useState([]);
+
+  const fetchInfo = async () => {
+    try {
+      const response = await api.get("/banners");
+      setBanner(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchInfo();
+  }, []);
+
   const settings = {
     dots: true, // Enable dots at the bottom
     infinite: true, // Loop through slides infinitely
@@ -41,9 +60,15 @@ function Slid() {
     nextArrow: <NextArrow />, // Custom next arrow
     prevArrow: <PrevArrow />, // Custom previous arrow
   };
+
   return (
     <Slider {...settings}>
-      <div className="main-slides-item pt-5">
+      <div
+        className="main-slides-item pt-5"
+        style={{
+          backgroundImage: `url(${bannerImage1})`,
+        }}
+      >
         <div className="container">
           <div className="main-slides-content">
             <span className="sub-title">
@@ -69,7 +94,13 @@ function Slid() {
           </div>
         </div>
       </div>
-      <div className="main-slides-item item-bg2 pt-5">
+
+      <div
+        className="main-slides-item pt-5"
+        style={{
+          backgroundImage: `url(${bannerImage2})`,
+        }}
+      >
         <div className="container">
           <div className="main-slides-content">
             <span className="sub-title">
@@ -96,7 +127,13 @@ function Slid() {
           </div>
         </div>
       </div>
-      <div className="main-slides-item item-bg3 pt-5">
+
+      <div
+        className="main-slides-item pt-5"
+        style={{
+          backgroundImage: `url(${bannerImage3})`,
+        }}
+      >
         <div className="container">
           <div className="main-slides-content">
             <span className="sub-title">
